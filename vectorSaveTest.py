@@ -12,6 +12,10 @@ import uuid
 import numpy as np
 from tools import pdfSplitTest_Ch
 from tools import pdfSplitTest_En
+import os
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 
 # 设置日志模版
@@ -30,6 +34,11 @@ OPENAI_EMBEDDING_MODEL = "text-embedding-3-small"
 ONEAPI_API_BASE = "http://139.224.72.218:3000/v1"
 ONEAPI_EMBEDDING_API_KEY = "sk-aFXNklkEVj0McTUf6bA4EcC2F1B84c9aB2DeB494A1EbF87c"
 ONEAPI_EMBEDDING_MODEL = "text-embedding-v1"
+
+ONEAPI_API_BASE = os.getenv("SILICONFLOW_API_URL")
+ONEAPI_EMBEDDING_API_KEY = os.getenv("SILICONFLOW_API_KEY")
+ONEAPI_EMBEDDING_MODEL = os.getenv("SILICONFLOW_API_EMBEDDING_MODEL")
+
 
 # 设置测试文本类型
 TEXT_LANGUAGE = 'Chinese'  #Chinese 或 English

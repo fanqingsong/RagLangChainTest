@@ -28,6 +28,10 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 # RAG相关
 from langchain_core.runnables import RunnablePassthrough
+import os
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 
 # 设置langsmith环境变量
@@ -60,6 +64,14 @@ ONEAPI_CHAT_API_KEY = "sk-aFXNklkEVj0McTUf6bA4EcC2F1B84c9aB2DeB494A1EbF87c"
 ONEAPI_CHAT_MODEL = "qwen-plus"
 ONEAPI_EMBEDDING_API_KEY = "sk-aFXNklkEVj0McTUf6bA4EcC2F1B84c9aB2DeB494A1EbF87c"
 ONEAPI_EMBEDDING_MODEL = "text-embedding-v1"
+
+
+ONEAPI_API_BASE = os.getenv("SILICONFLOW_API_URL")
+ONEAPI_CHAT_API_KEY = os.getenv("SILICONFLOW_API_KEY")
+ONEAPI_EMBEDDING_API_KEY = os.getenv("SILICONFLOW_API_KEY")
+ONEAPI_CHAT_MODEL = os.getenv("SILICONFLOW_API_MODEL")
+ONEAPI_EMBEDDING_MODEL = os.getenv("SILICONFLOW_API_EMBEDDING_MODEL")
+
 
 # API服务设置相关  根据自己的实际情况进行调整
 PORT = 8012  # 服务访问的端口
